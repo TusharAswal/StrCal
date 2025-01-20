@@ -18,5 +18,8 @@ describe('StringCalculator', () => {
         expect(calculator.add("1,2")).toBe(3);
     });
 
+    test('should return the sum when numbers are separated by newlines', () => {
+        expect(calculator.add("1\n2,3")).toBe(6);
+    });
   });
   
