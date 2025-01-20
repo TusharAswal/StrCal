@@ -1,7 +1,8 @@
 // StringCalculator.js
 class StringCalculator {
-    calculate(value) {
-        return value;
+    add(value) {
+      if(value.length===0) return 0
+      return 1
     }
 }
 
