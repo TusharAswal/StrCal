@@ -1,3 +1,3 @@
 const StringCalculator = require('./StringCalculator');
 const calculator=new StringCalculator()
-console.log("Response==>",calculator.add('20,20'))
+console.log("Response==>",calculator.add('20,10'))
