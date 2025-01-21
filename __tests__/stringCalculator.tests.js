@@ -15,11 +15,12 @@ describe('StringCalculator', () => {
     });
 
     it('should return the sum for two numbers separated by a comma', () => {
-        expect(calculator.add("1,2")).toBe(3);
+        expect(calculator.add("15,15")).toBe(30);
     });
 
     test('should return the sum when numbers are separated by newlines', () => {
         expect(calculator.add("1\n2,3")).toBe(6);
     });
+
   });
   
