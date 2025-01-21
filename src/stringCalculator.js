@@ -24,9 +24,12 @@ class StringCalculator {
             if (typeof b === 'string' && b.includes('\n')) {
                 b = sumParsedValues(b);
             } else {
+                
                 b = parseInt(b);
             }
-            return a + b;
+            console.log("STRING",a , b)
+
+            return (a>=1000?0:a) + (b>1000?0:b);
         }, 0);
         return total
     }

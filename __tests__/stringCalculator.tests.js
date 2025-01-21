@@ -26,5 +26,9 @@ describe('StringCalculator', () => {
         expect(calculator.add("//;\n1;2")).toBe(3);
     });
 
+    test('ignore number if greater than 1000', () => {
+        expect(calculator.add("1001,2")).toBe(2);
+    });
+
   });
   
