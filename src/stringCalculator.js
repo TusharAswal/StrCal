@@ -5,12 +5,12 @@ class StringCalculator {
         if (value.length === 0) return 0
         if (value.length === 1) return parseInt(value)
         if (value.includes('//')) {
-
             let splitterStart=value.indexOf("[")
             let splitterEnd=value.indexOf("]")
             const splitter = value.slice(splitterStart+1,splitterEnd)
             let trimmedValue=value.slice(splitterEnd+1,value.length)
-            return this.calculateSum(splitter, trimmedValue)
+            let defaultSplitter=(splitterStart>0&&splitterEnd>0)?splitter:value[2]
+            return this.calculateSum(defaultSplitter, trimmedValue)
         }
         return this.calculateSum(",", value)
     }
