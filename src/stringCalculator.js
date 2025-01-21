@@ -15,6 +15,7 @@ class StringCalculator {
             let parsedVal = parseInt(o.trim())
             return o.includes('\n') ? o : parsedVal ? parsedVal : 0
         })
+        console.log(splitted,"splittedsplitted")
         let total = splitted.reduce((a, b) => {
             const sumParsedValues = (str) =>
                 str.split('\n').reduce((first, second) => parseInt(first || 0) + parseInt(second || 0), 0);
@@ -28,7 +29,9 @@ class StringCalculator {
                 b = parseInt(b);
             }
             console.log("STRING",a , b)
-
+            if (a < 0 || b < 0) {
+                throw new Error('Negative numbers not allowed');
+            }
             return (a>=1000?0:a) + (b>1000?0:b);
         }, 0);
         return total
