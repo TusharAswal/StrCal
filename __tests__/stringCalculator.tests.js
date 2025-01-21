@@ -23,7 +23,7 @@ describe('StringCalculator', () => {
     });
 
     test('should handle custom delimiters', () => {
-        expect(calculator.add("//;\n1;2")).toBe(3);
+        expect(calculator.add("//[;]\n1;2")).toBe(3);
     });
 
     test('ignore number if greater than 1000', () => {
