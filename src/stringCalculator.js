@@ -4,18 +4,21 @@ class StringCalculator {
         if (value.length === 0) return 0
         if (value.length === 1) return parseInt(value)
         if (value.includes('//')) {
-            const splitter = value[2]
+            let splitterStart=value.indexOf("[")
+            let splitterEnd=value.indexOf("]")
+            const splitter = value.slice(splitterStart+1,splitterEnd)
+            console.log("SPLITTER",splitter)
             return this.calculateSum(splitter, value)
         }
         return this.calculateSum(",", value)
     }
 
     calculateSum(splitter, value) {
+        console.log("SPLITTER",splitter)
         let splitted = value.split(splitter).map(o => {
             let parsedVal = parseInt(o.trim())
             return o.includes('\n') ? o : parsedVal ? parsedVal : 0
         })
-        console.log(splitted,"splittedsplitted")
         let total = splitted.reduce((a, b) => {
             const sumParsedValues = (str) =>
                 str.split('\n').reduce((first, second) => parseInt(first || 0) + parseInt(second || 0), 0);
@@ -28,7 +31,6 @@ class StringCalculator {
                 
                 b = parseInt(b);
             }
-            console.log("STRING",a , b)
             if (a < 0 || b < 0) {
                 throw new Error('Negative numbers not allowed');
             }
